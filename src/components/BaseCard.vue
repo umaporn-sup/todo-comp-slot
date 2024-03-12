@@ -1,7 +1,9 @@
 <script setup>
 const props = defineProps({
   size: {
-    type: String,
+    validator(value) {
+      return ['sm', 'md', 'lg'].includes(value)
+    },
     default: 'sm'
   },
   variant: {
@@ -10,8 +12,6 @@ const props = defineProps({
     },
     default: 'outlined'
   }
-
-   
 })
 </script>
 
